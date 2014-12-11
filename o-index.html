@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<canvas id="box" width="800" height="500"></canvas>
+<script>
+    var box = document.querySelector('#box'),
+            ctx = box.getContext('2d'),
+            image = new Image();
+
+    image.src = '../irth/images/2.jpg';
+    ctx.scale(2,2);
+
+
+    image.onload = function(){
+        ctx.drawImage(image,0,0, window.innerWidth, window.innerHeight);
+        ctx.fillStyle = 'green';
+        ctx.strokeRect(50,50,150,150);
+
+
+
+        ctx.translate(1,20);
+
+
+        ctx.beginPath();
+        ctx.moveTo(100,100);
+        ctx.lineTo(150,100);
+        ctx.lineTo(150,150);
+        ctx.lineTo(100,100);
+        ctx.fillStyle = 'pink';
+        ctx.strokeStyle = 'red';
+        ctx.fill();
+        ctx.stroke();
+        ctx.strokeStyle = 'red';
+        ctx.font = 'bold 69px impact';
+        ctx.textAlign = 'center';
+        ctx.strokeText('Fork Ya!'.toUpperCase(), 200, 100);
+        ctx.font = '70px impact';
+        ctx.fillText('Fork Ya!'.toUpperCase(), 200, 100);
+
+
+    };
+
+</script>
+
+</body>
+</html>
